@@ -1,0 +1,33 @@
+body{
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+h2{
+    display: inline;
+    font-size: 22px;
+    padding: 5px;
+    background-color: #2c9c83;
+    color: #fff;
+    border: 3px solid #000;
+    border-radius: 5px;
+}
+h3{
+    font-size: 18px;
+}
+#ejerciciosEnClase, #tareas{
+    margin-bottom: 40px;
+}
+li{
+    margin-bottom: 20px;
+}
+a{
+    text-decoration: none;
+    color: #2c9c83;
+    font-size: 15px;
+}
+a:hover{
+    padding: 3px 10px;
+    background-color: #2c9c83;
+    color: #fff;
+    border: 3px solid #000;
+    cursor: pointer;
+}

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pulpería</title>
+    <link rel="stylesheet" href="css/style.css">
+    <!-- Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <!-- Bootstrap -->
+    <script src="js/main.js"></script>
+</head>
+<body>
+    <div class="container-md text-center">
+        <header>
+            <h1 class="my-2">Tarea 1 - Pulpería</h1>
+        </header>
+        <main>
+            <div class="mt-2">
+                <p>Imagina que fuiste a la pulpería y compraste los siguientes artículos:</p>
+                <ul>
+                    <li>Coca Cola de 2 litros</li>
+                    <li>Papi Ondas Tosty</li>
+                    <li>1 Bolsa de hielo</li>
+                </ul>
+                <p>El impuesto de ventas es del 13%. Debes hacer un programa que calcule el monto final que debes pagar, osea el precio neto.</p>
+                <h2>Ingrese el precio de cada producto.</h2>
+            </div>
+        
+            <div class="precios d-flex flex-column mt-1 mb-3">
+                <div class="cocaCola d-inline-flex flex-column align-items-center mb-3">
+                    <p>Coca Cola</p>
+                    <input id="precioCocaCola" class="precioCocaCola" type="number" placeholder="Precio Coca Cola">
+                </div>
+    
+                <div class="papiOndasTosty d-inline-flex flex-column align-items-center mb-3">
+                    <p>Papi Ondas Tosty</p>
+                    <input id="precioPapiOndasTosty" class="precioPapiOndasTosty" type="number" placeholder="Precio Papi Ondas Tosty">
+                </div>
+    
+                <div class="bolsaDeHielo d-inline-flex flex-column align-items-center mb-2">
+                    <p>Bolsa de Hielo</p>
+                    <input id="precioBolsaDeHielo" class="precioBolsaDeHielo" type="number" placeholder="Precio Bolsa de Hielo">
+                </div>
+            </div>
+        
+            <div class="resultadoFinal">
+                <button id="calcularBtn" class="calcularBtn mb-4">Calcular</button>
+                <h2 id="resultadoLbl" class="resultadoLbl mb-5">Resultado?</h2>
+            </div>
+    
+        </main>
+    </div>
+</body>
+</html>

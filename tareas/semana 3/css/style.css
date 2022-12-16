@@ -1,0 +1,55 @@
+#container{
+    width: 80%;
+}
+
+#precioPorNoche, input, select, button {
+    margin-bottom: 6px !important;
+    border: 1px solid #DCDCDC;
+    border-radius: 5px;
+    height: 30px;
+}
+#precioPorNoche{
+    font-weight: 700;
+    font-size: 1.2rem;
+    height: 35px;
+    margin-top: 10px;
+}
+button{
+    background: #941751;
+    color: #fff;
+    border: none;
+    height: 40px;
+    border-radius: 5px !important;
+}
+#mostrarHistorialLbl1{
+    display: none;
+    margin-top: 30px;
+    margin-bottom: 0px;
+}
+#mostrarResultadoLbl {
+    display: none;
+    margin-top: 20px;
+    font-size: 1.1rem;
+    font-weight: 500;
+    border: 1px solid #941751;
+    border-radius: 5px;
+    padding: 10px;
+}
+#mostrarHistorialLbl2 {
+    display: none;
+    font-size: 1.1rem;
+    font-weight: 600;
+    border: 1px solid #941751;
+    border-radius: 5px;
+    margin: 15px 0;
+}
+#mostrarHistorialLbl2 p {
+    height: 10px;
+    padding: 0;
+}
+
+@media only screen and (min-width: 768px) {
+    #container{
+        width: 50%;
+    }
+}

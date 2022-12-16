@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
+    <!-- Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <!-- Bootstrap -->
+    <script src="js/main.js"></script>
+    <title>Hotel</title>
+</head>
+<body>
+    <div id="container" class="d-flex flex-column container-sm text-center">
+        <h1 class="mb-3">Hotel JavaScript</h1>
+        <input type="text" placeholder="Nombre" id="nombreIn">
+        <input type="text" placeholder="Apellido" id="apellidoIn">
+        <select id="descuentoInicialSlt">
+            <option value="" disabled selected>Seleccione la promoción que desea aplicar</option>
+            <option value="0">0% descuento</option>
+            <option value="5">5% descuento</option>
+            <option value="10">10% descuento</option>
+            <option value="25">25% descuento</option>
+        </select>
+        <input type="number" placeholder="Cantidad de noches" id="cantidadNochesIn">
+        <select id="tipoDeClienteSlt">
+            <option value="" disabled selected>Seleccione el tipo de cliente</option>
+            <option value="1">Normal</option>
+            <option value="2">VIP</option>
+            <option value="3">Premium</option>
+        </select>
+        <p id="precioPorNoche">El precio de la habitación por noche es de $100</p>
+        <button id="calcularBtn">Calcular</button>
+        <button id="historialBtn">Historial</button>
+
+        <!-- Resultado del cálculo -->
+        <p id="mostrarResultadoLbl"></p>
+        <!-- Resultado del cálculo -->
+
+        <!-- Historial -->
+        <h2 id="mostrarHistorialLbl1">HISTORIAL ⬇️</h2>
+        <div id="mostrarHistorialLbl2">
+            <p id="historialNombre"></p><hr>
+            <p id="historialNoches"></p><hr>
+            <p id="historialTipoCliente"></p><hr>
+            <p id="historialPrecioFinal"></p>
+        </div>
+        <!-- Historial -->
+    </div>
+</body>
+</html>

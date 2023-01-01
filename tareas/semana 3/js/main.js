@@ -4,6 +4,13 @@ function init() {
     //Variables Globales
     const precioNoche = 100;
 
+    //Variables Globales para usar en ambas funciones
+    let nombre = '';
+    let apellido = '';
+    let cantidadNoches = '';
+    let tipoDeCliente = '';
+    let precioFinal = 0;
+
     // Variables Input
     let nombreIn = document.getElementById('nombreIn');
     let apellidoIn = document.getElementById('apellidoIn');
@@ -19,20 +26,11 @@ function init() {
 
     //Variables Label (Mostrar)
     let mostrarResultadoLbl = document.getElementById('mostrarResultadoLbl');
-    let mostrarHistorialLbl1 = document.getElementById('mostrarHistorialLbl1');
-    let mostrarHistorialLbl2 = document.getElementById('mostrarHistorialLbl2');
-    let historialNombre = document.getElementById('historialNombre');
-    let historialNoches = document.getElementById('historialNoches');
-    let historialTipoCliente = document.getElementById('historialTipoCliente');
-    let historialPrecioFinal = document.getElementById('historialPrecioFinal');
+    let mostrarHistorial = document.getElementById('mostrarHistorial');
 
-
-    //Variables Globales para usar en ambas funciones
-    let nombre = '';
-    let apellido = '';
-    let cantidadNoches = '';
-    let tipoDeCliente = '';
-    let precioFinal = 0;
+    calcularBtn.onclick = onCalcularBtn;
+    historialBtn.onclick = onHistorialBtn;
+    let historialArray = [];
 
     function onCalcularBtn() {
         
@@ -85,38 +83,42 @@ function init() {
         mostrarResultadoLbl.style.display = "flex";
         mostrarResultadoLbl.innerHTML = tipoDeCliente == 'Regular' ? `Estimado/a ${nombre.trim()} ${apellido.trim()}, el precio por ${cantidadNoches} ${noche} de hospedaje en nuestro hotel aplicando el ${descuentoInicial}% de descuento de la promoción de fin de año es de $${precioFinal}, esperamos que regrese muy pronto.` : 
         `Estimado/a ${nombre.trim()} ${apellido.trim()}, el precio por ${cantidadNoches} ${noche} de hospedaje en nuestro hotel aplicando el ${descuentoInicial}% de descuento de la promoción de fin de año es de $${subtotal}, sin embargo, por ser cliente "${tipoDeCliente}" se le aplicará un ${descuentoTipoDeCliente}% de descuento adicional, por lo que su factura final es de $${precioFinal}, esperamos que regrese muy pronto.`
+        
+        let historialGenerico = {
+			nombre: nombre,
+			apellido: apellido,
+			cantidadNoches: cantidadNoches,
+			tipoDeCliente: tipoDeCliente,
+			descuentoTotal: descuentoTotal,
+			precioFinal: precioFinal,
+		};
+
+		let historial = new Historial(nombre, apellido, cantidadNoches, tipoDeCliente, descuentoTotal, precioFinal);
+		historialArray.push(historial);
+        
+        limpiarUI();
     }
-    // historialArr.push(clientesObj)
+    
+    function limpiarUI() {
+        nombreIn.value = '';
+        apellidoIn.value = '';
+        cantidadNochesIn.value = '';
+        descuentoInicialSlt.value = '';
+        tipoDeClienteSlt.value = '';
+    }
 
     ////////////////////////////////////////////////////////////////////
     //Código para la parte de historial
-    let clientesObj = {}
-    let historialArr = []
-    
     function onHistorialBtn() {
-        clientesObj = {
-            'nombre'        : nombre,
-            'apellido'      : apellido,
-            'noches'        : cantidadNoches,
-            'tipoDeCliente' : tipoDeCliente,
-            'precioFinal'   : precioFinal
-        }
 
-        historialArr = historialArr.push(clientesObj)
-        console.log('values -->',nombre,apellido,cantidadNoches,tipoDeCliente,precioFinal)
-        console.log('historialArr',historialArr)
-        
-        mostrarHistorialLbl1.style.display = "flex";
-        mostrarHistorialLbl2.style.display = "flex";
-        mostrarHistorialLbl2.style.flexDirection = "column";
+		let historialInfo = document.createElement('div');
+		mostrarHistorial.innerHTML = '';
+		mostrarHistorial.appendChild(historialInfo);
 
-        historialNombre.innerHTML      = `Nombre: ${clientesObj.nombre} ${clientesObj.apellido}`;
-        historialNoches.innerHTML      = `Cantidad de noches: ${clientesObj.noches}`;
-        historialTipoCliente.innerHTML = `Tipo de cliente: ${clientesObj.tipoDeCliente}`;
-        historialPrecioFinal.innerHTML = `Precio final: ${clientesObj.precioFinal}`
-    }
-
-    calcularBtn.onclick = onCalcularBtn;
-    historialBtn.onclick = onHistorialBtn;
+		for (let index = 0; index < historialArray.length; index++) {
+			const historial = historialArray[index];
+			historialInfo.innerHTML += historial.generarReporte();
+		}
+	}
 
 }

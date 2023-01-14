@@ -2,6 +2,8 @@
 
 window.addEventListener('load', init, false);
 import { Car } from '../js/car/car.js';
+import { Street } from './car/street.js';
+import { City } from './car/city.js';
 
 function init() {
     var carsSlt = document.getElementById('carsSlt');

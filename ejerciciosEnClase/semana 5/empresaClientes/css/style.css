@@ -1,0 +1,81 @@
+:root {
+    --primary-color: #263238;
+    --secondary-color: #f50057;
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+h1 {
+    color: var(--primary-color)
+}
+
+h2 {
+    color: var(--secondary-color)
+}
+
+button {
+    min-width: 60px;
+    border-style: none;
+    padding: 10px 10px 10px 10px;
+    margin: 5px 5px 5px 5px;
+    font-weight: bold;
+    color: white;
+    background-color: var(--secondary-color);
+    outline: none;
+}
+
+button:focus {
+    outline: none;
+}
+
+.mainContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.clientesContainer {
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.clientView_container {
+    width: calc(100% - 10px);
+    height: 100px;
+    /* background-color: rgb(178, 178, 178); */
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-top: 5px;
+    border-radius: 5px;
+    border-color: lightgray;
+    border-style: solid;
+    border-width: 2px;
+}
+
+.clientView_container_error {
+    border-color: red;
+}
+
+.clientView_textsContainer {
+    width: 80%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: left;
+}
+
+.clientView_buttonsContainer {
+    width: 20%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: left;
+}
